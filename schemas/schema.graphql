@@ -1,0 +1,36 @@
+type Query {
+  municipios(id: ID!): [Municipio!]!
+  municipio(id: ID!): Municipio
+}
+
+type Municipio {
+  id: ID!
+  nome: String!
+  microrregiao: Microrregiao!
+  regiaoImediata: Mesorregiao!
+}
+
+type Microrregiao {
+  id: ID!
+  nome: String!
+  mesorregiao: Mesorregiao
+}
+
+type Mesorregiao {
+  id: ID!
+  nome: String!
+  UF: UF!
+}
+
+type UF {
+  id: ID!
+  sigla: String!
+  nome: String!
+  regiao: Regiao
+}
+
+type Regiao {
+  id: ID!
+  sigla: String!
+  nome: String!
+}

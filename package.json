@@ -1,0 +1,14 @@
+{
+  "name": "graphql-rest-wrapper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./api.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3",
+    "node-fetch": "^2.6.1"
+  }
+}
