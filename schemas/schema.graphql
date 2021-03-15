@@ -1,18 +1,40 @@
 type Query {
-  municipios(id: ID!): [Municipio!]!
+  distritos: [Distrito!]!
+  distritoById(id: ID!): [Distrito!]!
+  distritoByUf(id: ID!): [Distrito!]!
+  distritoByMesorregiao(id: ID!): [Distrito!]!
+  distritoByMicrorregiao(id: ID!): [Distrito!]!
+  distritoByMunicipio(id: ID!): [Distrito!]!
+  distritoByRegiaoImediata(id: ID!): [Distrito!]!
+  distritoByRegiaoIntermediaria(id: ID!): [Distrito!]!
+  distritoByRegiao(id: ID!): [Distrito!]!
   municipio(id: ID!): Municipio
+  municipios: [Municipio!]!
+  municipiosByUf(id: ID!): [Municipio!]!
+  municipiosByMesorregiao(id: ID!): [Municipio!]!
+  municipiosByMicrorregiao(id: ID!): [Municipio!]!
+  municipiosByRegiaoImediata(id: ID!): [Municipio!]!
+  municipiosByRegiaoIntermediaria(id: ID!): [Municipio!]!
+  municipiosByRegiao(id: ID!): [Municipio!]!
+}
+
+type Distrito {
+  id: ID!
+  nome: String!
+  municipio: Municipio!
 }
 
 type Municipio {
   id: ID!
   nome: String!
   microrregiao: Microrregiao!
-  regiaoImediata: Mesorregiao!
+  regiaoImediata: Microrregiao!
 }
 
 type Microrregiao {
   id: ID!
   nome: String!
+  UF: UF
   mesorregiao: Mesorregiao
 }
 
